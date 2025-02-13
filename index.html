@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Local</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>6 Meses 🐧</h1>
+    </header>
+
+    <section>
+        <h2>Momentos ✨<br>Py e Gu ❤️</h2>
+
+        <div class="gallery">
+            <!-- Gerando 16 lacunas (32 fotos no total) -->
+            <script>
+                for (let i = 1; i <= 16; i++) {
+                    document.write(`
+                        <div class="photo-pair ${i % 2 === 0 ? 'right lower' : 'left'}">
+                            <div class="photo-item">
+                                <p class="photo-name">Momento ${i}</p>
+                                <img src="foto${i * 2 - 1}.jpg" alt="Foto ${i * 2 - 1}">
+                                <button class="heart-btn" onclick="toggleDescription(${i * 2 - 1})">❤️</button>
+                                <p class="hidden-description" id="desc-${i * 2 - 1}">Descrição especial da Foto ${i * 2 - 1}.</p>
+                            </div>
+                            <div class="photo-item">
+                                <p class="photo-name">Lembrança ${i}</p>
+                                <img src="foto${i * 2}.jpg" alt="Foto ${i * 2}">
+                                <button class="heart-btn" onclick="toggleDescription(${i * 2})">❤️</button>
+                                <p class="hidden-description" id="desc-${i * 2}">Descrição especial da Foto ${i * 2}.</p>
+                            </div>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+    </section>
+
+    <!-- Lacuna grande para texto -->
+    <div class="final-text">
+        <p>aqui escrever <br> teste</p>
+        <p class="giant-heart">❤️ Te amo ❤️</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Meu Site Local</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
